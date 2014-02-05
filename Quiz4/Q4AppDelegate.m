@@ -14,6 +14,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    UITabBarController *tc = [[UITabBarController alloc] init];
+    Q4LeftController *leftController = [[Q4LeftController alloc] initWithNibName:nil bundle:nil];
+    Q4RightController *rightController = [[Q4RightController alloc] initWithNibName:nil bundle:nil];
+    NSArray *controllers = [NSArray arrayWithObjects:leftController,rightController, nil];
+    [tc setViewControllers:controllers];
+    [self.window setRootViewController:tc];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
